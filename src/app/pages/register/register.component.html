@@ -1,0 +1,61 @@
+<div class="container-fluid card login-container">
+    <h3 class="text-center">Registrar</h3>
+    <hr>
+    <div class="alert alert-danger" role="alert" *ngIf="errorMsg.length">
+      <p *ngFor="let msg of errorMsg">{{msg}}</p>
+    </div>
+    <div class="mb-3">
+      <label for="login" class="form-label">usuario</label>
+      <input [(ngModel)]="registerRequest.userName"  type="text" class="form-control" id="login">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">contraseña</label>
+      <input [(ngModel)]="registerRequest.password" type="password" class="form-control" id="password" placeholder="Password">
+    </div>
+    <div class="mb-3">
+        <label for="fn" class="form-label">Nombre</label>
+        <input [(ngModel)]="registerRequest.firstName"  type="text" class="form-control" id="fn">
+    </div>
+    <div class="mb-3">
+        <label for="ln" class="form-label">Apellido</label>
+        <input [(ngModel)]="registerRequest.lastName"  type="text" class="form-control" id="ln">
+     </div>
+     <div class="mb-3">
+        <label for="email" class="form-label">correo-electronico</label>
+        <input [(ngModel)]="registerRequest.email"  type="email" class="form-control" id="email" placeholder="name@example.com">
+    </div>
+     <div class="mb-3">
+        <label for="dob" class="form-label">Fecha de Nacimiento</label>
+        <input [(ngModel)]="registerRequest.dateOfBirth"  type="datetime-local" class="form-control" id="dob">
+    </div>
+     <div class="mb-3">
+        <label for="login" class="form-label">Direccion</label>
+        <input [(ngModel)]="registerRequest.address"  type="text" class="form-control" id="login" placeholder="name@example.com">
+     </div>
+     <div class="mb-3">
+        <label for="login" class="form-label">Descripción</label>
+        <input [(ngModel)]="registerRequest.description"  type="text" class="form-control" id="desc" placeholder="name@example.com">
+     </div>
+    <div class="mb-3">
+        <label for="role" class="form-label">Rol</label>
+        <select [(ngModel)]="registerRequest.roleId"  type="text" class="form-control" id="role">
+            <option value="" disabled>-----</option>
+            <option value="2">TUTOR</option>
+            <option value="3">ESTUDIANTE</option>
+        </select>
+     </div>
+     <div class="mb-3">
+        <label for="gender" class="form-label">Genero</label>
+        <select [(ngModel)]="registerRequest.gender"  type="text" class="form-control" id="gender">
+            <option value="" disabled>-----</option>
+            <option value="Hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+        </select>
+     </div>
+      <div>
+        <button (click)="register()" type="button" class="btn btn-primary">
+          Register
+        </button>
+      </div>
+  </div>
+
